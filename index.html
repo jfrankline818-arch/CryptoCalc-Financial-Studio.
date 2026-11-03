@@ -28,28 +28,15 @@
     </script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .adsense-container {
-            background-image: radial-gradient(rgba(156, 163, 175, 0.15) 1px, transparent 0);
-            background-size: 12px 12px;
-        }
-        .dark .adsense-container {
-            background-image: radial-gradient(rgba(75, 85, 99, 0.25) 1px, transparent 0);
-        }
-    </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
-
-    <!-- GOOGLE ADSENSE MASTER SCRIPT -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4321543724878495" crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-4321543724878495">
 
     <!-- HEADER / NAVIGATION -->
     <header class="sticky top-0 z-40 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
-                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('roi-tool')">
+                <a href="#roi-tool" class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-xl bg-crypto-600 text-white flex items-center justify-center font-bold text-xl shadow-md">
                         <i class="fa-solid fa-coins"></i>
                     </div>
@@ -57,31 +44,31 @@
                         <span class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">CryptoCalc</span>
                         <span class="text-xs bg-crypto-100 dark:bg-crypto-900 text-crypto-800 dark:text-crypto-200 px-2 py-0.5 rounded-full font-semibold ml-1">Studio</span>
                     </div>
-                </div>
+                </a>
 
                 <!-- Desktop Nav -->
                 <nav class="hidden xl:flex space-x-1">
-                    <button onclick="switchTab('roi-tool')" id="nav-roi-tool" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-crypto-600 dark:text-crypto-400 bg-crypto-50 dark:bg-gray-700 transition">
+                    <a href="#roi-tool" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-calculator mr-1"></i> Profit & ROI
-                    </button>
-                    <button onclick="switchTab('staking-tool')" id="nav-staking-tool" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    </a>
+                    <a href="#staking-tool" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-chart-line mr-1"></i> Staking Yield
-                    </button>
-                    <button onclick="switchTab('gas-tool')" id="nav-gas-tool" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    </a>
+                    <a href="#gas-tool" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-gas-pump mr-1"></i> Gas Estimator
-                    </button>
-                    <button onclick="switchTab('about')" id="nav-about" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    </a>
+                    <a href="#about" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-circle-info mr-1"></i> About
-                    </button>
-                    <button onclick="switchTab('privacy')" id="nav-privacy" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    </a>
+                    <a href="#privacy" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-user-shield mr-1"></i> Privacy
-                    </button>
-                    <button onclick="switchTab('terms')" id="nav-terms" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    </a>
+                    <a href="#terms" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-file-contract mr-1"></i> Terms
-                    </button>
-                    <button onclick="switchTab('contact')" id="nav-contact" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    </a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-envelope mr-1"></i> Contact
-                    </button>
+                    </a>
                 </nav>
 
                 <!-- Actions -->
@@ -98,42 +85,25 @@
 
         <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="hidden xl:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 pt-2 pb-3 space-y-1">
-            <button onclick="switchTab('roi-tool')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Profit & ROI</button>
-            <button onclick="switchTab('staking-tool')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Staking Yield</button>
-            <button onclick="switchTab('gas-tool')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Gas Estimator</button>
-            <button onclick="switchTab('about')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">About Us</button>
-            <button onclick="switchTab('privacy')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Privacy Policy</button>
-            <button onclick="switchTab('terms')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Terms of Service</button>
-            <button onclick="switchTab('contact')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Contact Support</button>
+            <a href="#roi-tool" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Profit & ROI</a>
+            <a href="#staking-tool" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Staking Yield</a>
+            <a href="#gas-tool" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Gas Estimator</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">About Us</a>
+            <a href="#privacy" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Privacy Policy</a>
+            <a href="#terms" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Terms of Service</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Contact Support</a>
         </div>
     </header>
 
-    <!-- AD SLOT 1: TOP LEADERBOARD BANNER (BLANK & UNLABELED) -->
-    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mt-6">
-        <div class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 sm:p-6 text-center adsense-container shadow-sm min-h-[120px] flex items-center justify-center">
-            <div class="w-full flex justify-center items-center min-h-[90px]">
-                <ins class="adsbygoogle"
-                     style="display:block; width:100%; max-width:728px; height:90px;"
-                     data-ad-client="ca-pub-4321543724878495"
-                     data-ad-slot="1234567890"
-                     data-ad-format="horizontal"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN CONTAINER -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-6 flex-grow w-full">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 flex-grow w-full">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
             <!-- MAIN WORKSPACE (8 COLS) -->
-            <div class="lg:col-span-8 space-y-6">
+            <div class="lg:col-span-8 space-y-10">
 
                 <!-- TOOL 1: CRYPTO ROI & PROFIT CALCULATOR -->
-                <section id="tool-roi-tool" class="tab-content bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                <section id="roi-tool" class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                     <div class="flex items-center justify-between mb-4">
                         <div>
                             <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Cryptocurrency Profit & ROI Calculator</h1>
@@ -142,45 +112,45 @@
                         <span class="p-3 bg-crypto-50 dark:bg-gray-700 text-crypto-600 dark:text-crypto-400 rounded-xl"><i class="fa-solid fa-calculator text-xl"></i></span>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Initial Investment ($)</label>
-                            <input type="number" id="roi-invest" value="1000" oninput="calculateRoi()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none">
+                            <input type="number" id="roi-invest" value="1000" oninput="calculateRoi()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Buy Price ($)</label>
-                            <input type="number" id="roi-buy" value="50000" oninput="calculateRoi()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none">
+                            <input type="number" id="roi-buy" value="50000" oninput="calculateRoi()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Sell Price ($)</label>
-                            <input type="number" id="roi-sell" value="75000" oninput="calculateRoi()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none">
+                            <input type="number" id="roi-sell" value="75000" oninput="calculateRoi()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Trading Fee (%)</label>
-                            <input type="number" id="roi-fee" value="0.1" step="0.05" oninput="calculateRoi()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none">
+                            <input type="number" id="roi-fee" value="0.1" step="0.05" oninput="calculateRoi()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500">
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-crypto-50 dark:bg-gray-700/40 rounded-xl border border-crypto-100 dark:border-gray-600">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-crypto-50 dark:bg-gray-700/40 rounded-xl border border-crypto-100 dark:border-gray-600 mb-6">
                         <div>
-                            <span class="text-xs uppercase font-bold text-gray-500 block">Net Profit / Loss</span>
+                            <span class="text-xs uppercase font-bold text-gray-500 block mb-1">Net Profit / Loss</span>
                             <span id="roi-profit-output" class="text-2xl font-black text-crypto-600 dark:text-crypto-400 font-mono">$498.00</span>
                         </div>
                         <div>
-                            <span class="text-xs uppercase font-bold text-gray-500 block">Return on Investment (ROI)</span>
+                            <span class="text-xs uppercase font-bold text-gray-500 block mb-1">Return on Investment (ROI)</span>
                             <span id="roi-percent-output" class="text-2xl font-black text-crypto-600 dark:text-crypto-400 font-mono">+49.80%</span>
                         </div>
                     </div>
 
-                    <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-6 space-y-3 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <h3 class="text-sm font-bold text-gray-900 dark:text-white">Understanding Digital Asset ROI & Fee Calculations</h3>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-4 text-xs text-gray-600 dark:text-gray-400 space-y-2 leading-relaxed">
+                        <h4 class="font-bold text-gray-800 dark:text-gray-200">Understanding Digital Asset ROI & Fee Calculations</h4>
                         <p>Return on Investment (ROI) measures the efficiency of a cryptocurrency trade relative to its initial capital outlay. Calculating fees incurred on both buy and sell orders provides an accurate picture of net portfolio growth.</p>
                         <p>Our client-side financial engine processes all computations locally in your browser to maintain strict personal financial data confidentiality.</p>
                     </div>
                 </section>
 
                 <!-- TOOL 2: STAKING & COMPOUND INTEREST SIMULATOR -->
-                <section id="tool-staking-tool" class="tab-content hidden bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                <section id="staking-tool" class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                     <div class="flex items-center justify-between mb-4">
                         <div>
                             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Crypto Staking & Compound Yield Simulator</h2>
@@ -189,34 +159,34 @@
                         <span class="p-3 bg-crypto-50 dark:bg-gray-700 text-crypto-600 dark:text-crypto-400 rounded-xl"><i class="fa-solid fa-chart-line text-xl"></i></span>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Staked Amount (Tokens)</label>
-                            <input type="number" id="stake-amount" value="1000" oninput="calculateStaking()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none">
+                            <input type="number" id="stake-amount" value="1000" oninput="calculateStaking()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Annual Percentage Yield (APY %)</label>
-                            <input type="number" id="stake-apy" value="12" oninput="calculateStaking()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none">
+                            <input type="number" id="stake-apy" value="12" oninput="calculateStaking()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Duration (Months)</label>
-                            <input type="number" id="stake-months" value="12" oninput="calculateStaking()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none">
+                            <input type="number" id="stake-months" value="12" oninput="calculateStaking()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500">
                         </div>
                     </div>
 
-                    <div class="p-4 bg-crypto-50 dark:bg-gray-700/40 rounded-xl border border-crypto-100 dark:border-gray-600 text-center">
+                    <div class="p-4 bg-crypto-50 dark:bg-gray-700/40 rounded-xl border border-crypto-100 dark:border-gray-600 text-center mb-6">
                         <span class="text-xs uppercase font-bold text-gray-500 block mb-1">Estimated Final Balance</span>
                         <span id="stake-output" class="text-3xl font-extrabold text-crypto-600 dark:text-crypto-400 font-mono">1,126.83 Tokens</span>
                     </div>
 
-                    <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-6 space-y-3 text-xs text-gray-600 dark:text-gray-400">
-                        <h3 class="text-sm font-bold text-gray-900 dark:text-white">Proof-of-Stake & Compound Growth</h3>
-                        <p>Proof-of-Stake (PoS) protocols reward token holders who help secure the blockchain network. Compounding rewards periodically accelerates total asset accumulation over time.</p>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-4 text-xs text-gray-600 dark:text-gray-400 space-y-2 leading-relaxed">
+                        <h4 class="font-bold text-gray-800 dark:text-gray-200">Proof-of-Stake & Compound Growth</h4>
+                        <p>Proof-of-Stake (PoS) protocols reward token holders who help secure the blockchain network. Compounding rewards periodically accelerates total asset accumulation over time using compound interest formulas <code>A = P(1 + r/n)^(nt)</code>.</p>
                     </div>
                 </section>
 
                 <!-- TOOL 3: GAS FEE ESTIMATOR -->
-                <section id="tool-gas-tool" class="tab-content hidden bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                <section id="gas-tool" class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                     <div class="flex items-center justify-between mb-4">
                         <div>
                             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Network Gas Fee & Cost Estimator</h2>
@@ -225,42 +195,34 @@
                         <span class="p-3 bg-crypto-50 dark:bg-gray-700 text-crypto-600 dark:text-crypto-400 rounded-xl"><i class="fa-solid fa-gas-pump text-xl"></i></span>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Gas Limit</label>
-                            <input type="number" id="gas-limit" value="21000" oninput="calculateGas()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none">
+                            <input type="number" id="gas-limit" value="21000" oninput="calculateGas()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Gas Price (Gwei)</label>
-                            <input type="number" id="gas-price" value="25" oninput="calculateGas()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none">
+                            <input type="number" id="gas-price" value="25" oninput="calculateGas()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Asset Price ($)</label>
-                            <input type="number" id="asset-price" value="3000" oninput="calculateGas()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none">
+                            <input type="number" id="asset-price" value="3000" oninput="calculateGas()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500">
                         </div>
                     </div>
 
-                    <div class="p-4 bg-crypto-50 dark:bg-gray-700/40 rounded-xl border border-crypto-100 dark:border-gray-600 text-center">
+                    <div class="p-4 bg-crypto-50 dark:bg-gray-700/40 rounded-xl border border-crypto-100 dark:border-gray-600 text-center mb-6">
                         <span class="text-xs uppercase font-bold text-gray-500 block mb-1">Estimated Transaction Cost</span>
                         <span id="gas-output" class="text-3xl font-extrabold text-crypto-600 dark:text-crypto-400 font-mono">$1.575</span>
                     </div>
+
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-4 text-xs text-gray-600 dark:text-gray-400 space-y-2 leading-relaxed">
+                        <h4 class="font-bold text-gray-800 dark:text-gray-200">Ethereum Gas Mechanics & Gwei Valuation</h4>
+                        <p>Gas represents computational effort on Ethereum-compatible networks. One Gwei equals <code>10^-9 ETH</code>. Total transaction fees are computed using <code>Cost ($) = (Gas Limit × Gas Price in Gwei × 10^-9) × Asset Price</code>.</p>
+                    </div>
                 </section>
 
-                <!-- AD SLOT 2: IN-CONTENT NATIVE BANNER (BLANK & UNLABELED) -->
-                <div class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-2 text-center min-h-[120px] flex items-center justify-center overflow-hidden adsense-container">
-                    <ins class="adsbygoogle"
-                         style="display:block; width:100%;"
-                         data-ad-client="ca-pub-4321543724878495"
-                         data-ad-slot="1000000002"
-                         data-ad-format="fluid"
-                         data-ad-layout-key="-fb+5w+4e-db+86"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-
                 <!-- SECTION: ABOUT US -->
-                <section id="tool-about" class="tab-content hidden space-y-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
+                <section id="about" class="space-y-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
                     <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4">
                         <div>
                             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">About CryptoCalc Studio</h2>
@@ -275,18 +237,15 @@
 
                         <h3 class="text-lg font-bold text-gray-900 dark:text-white">Client-Side Data Privacy</h3>
                         <p>We prioritize user confidentiality above all else. All financial parameters and calculations run locally within your web browser. No investment amounts, wallet values, or personal data are ever transmitted or saved on external servers.</p>
-
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Publisher Transparency</h3>
-                        <p>To support free access to our calculators, CryptoCalc Studio partners with Google AdSense to serve relevant advertisements. Advertising cookies allow vendors to display tailored ads based on prior website visits. Users can manage ad preferences in Google Ad Settings.</p>
                     </div>
                 </section>
 
                 <!-- SECTION: PRIVACY POLICY -->
-                <section id="tool-privacy" class="tab-content hidden space-y-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
+                <section id="privacy" class="space-y-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
                     <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4">
                         <div>
                             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Privacy Policy</h2>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Data usage disclosures, cookies, and AdSense compliance.</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Data usage disclosures, analytics, and browser security.</p>
                         </div>
                         <span class="p-3 bg-crypto-50 dark:bg-gray-700 text-crypto-600 dark:text-crypto-400 rounded-xl"><i class="fa-solid fa-user-shield text-xl"></i></span>
                     </div>
@@ -295,13 +254,13 @@
                         <h3 class="text-lg font-bold text-gray-900 dark:text-white">1. Log Data & Analytics</h3>
                         <p>CryptoCalc Studio collects standard non-personally identifiable server logs including browser specifications, IP metadata, and visit timestamps to maintain platform security and performance.</p>
 
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">2. Cookies and Google AdSense</h3>
-                        <p>Third-party vendors, including Google, use cookies to serve ads based on prior user visits. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" class="text-crypto-600 underline">Google Ads Settings</a> or <a href="https://www.aboutads.info" target="_blank" rel="noopener" class="text-crypto-600 underline">aboutads.info</a>.</p>
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">2. Local Storage & Privacy Guarantee</h3>
+                        <p>Our application uses browser local storage exclusively to save basic UI preferences (such as light or dark theme choices). We do not collect or track sensitive wallet information or financial data.</p>
                     </div>
                 </section>
 
                 <!-- SECTION: TERMS OF SERVICE -->
-                <section id="tool-terms" class="tab-content hidden space-y-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
+                <section id="terms" class="space-y-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
                     <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4">
                         <div>
                             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Terms of Service</h2>
@@ -320,7 +279,7 @@
                 </section>
 
                 <!-- SECTION: CONTACT SUPPORT -->
-                <section id="tool-contact" class="tab-content hidden space-y-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
+                <section id="contact" class="space-y-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
                     <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4">
                         <div>
                             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Contact & Support</h2>
@@ -329,20 +288,20 @@
                         <span class="p-3 bg-crypto-50 dark:bg-gray-700 text-crypto-600 dark:text-crypto-400 rounded-xl"><i class="fa-solid fa-envelope text-xl"></i></span>
                     </div>
 
-                    <form onsubmit="event.preventDefault(); alert('Message submitted successfully!');" class="space-y-4">
+                    <form onsubmit="event.preventDefault(); alert('Message submitted successfully!');" class="space-y-4 max-w-xl">
                         <div>
                             <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Your Name</label>
-                            <input type="text" required placeholder="Jane Doe" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none">
+                            <input type="text" required placeholder="Jane Doe" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Email Address</label>
-                            <input type="email" required placeholder="trader@example.com" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none">
+                            <input type="email" required placeholder="trader@example.com" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Message</label>
-                            <textarea rows="4" required placeholder="Enter your inquiry..." class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none"></textarea>
+                            <textarea rows="4" required placeholder="Enter your inquiry..." class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-crypto-500"></textarea>
                         </div>
-                        <button type="submit" class="px-6 py-3 bg-crypto-600 hover:bg-crypto-700 text-white font-semibold text-sm rounded-xl transition">Submit Message</button>
+                        <button type="submit" class="px-6 py-3 bg-crypto-600 hover:bg-crypto-700 text-white font-semibold text-sm rounded-xl transition shadow-sm">Submit Message</button>
                     </form>
                 </section>
 
@@ -351,19 +310,6 @@
             <!-- SIDEBAR (4 COLS) -->
             <aside class="lg:col-span-4 space-y-6">
                 <div class="sticky top-20 space-y-6">
-
-                    <!-- AD SLOT 3: STICKY SIDEBAR BANNER (BLANK & UNLABELED) -->
-                    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 text-center adsense-container shadow-sm min-h-[250px] flex items-center justify-center">
-                        <ins class="adsbygoogle"
-                             style="display:block; width:100%; height:250px;"
-                             data-ad-client="ca-pub-4321543724878495"
-                             data-ad-slot="1000000003"
-                             data-ad-format="rectangle"
-                             data-full-width-responsive="true"></ins>
-                        <script>
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                    </div>
 
                     <div class="bg-gradient-to-br from-crypto-600 to-crypto-800 text-white rounded-2xl p-6 shadow-md">
                         <i class="fa-solid fa-shield-halved text-3xl mb-3 text-crypto-200"></i>
@@ -388,11 +334,14 @@
                     <span class="font-bold text-gray-900 dark:text-white">CryptoCalc Studio</span>
                     <span class="text-xs text-gray-500 dark:text-gray-400">© 2026. All Rights Reserved.</span>
                 </div>
-                <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-500">
-                    <a href="#" onclick="switchTab('about')" class="hover:underline">About Us</a>
-                    <a href="#" onclick="switchTab('privacy')" class="hover:underline">Privacy Policy</a>
-                    <a href="#" onclick="switchTab('terms')" class="hover:underline">Terms of Service</a>
-                    <a href="#" onclick="switchTab('contact')" class="hover:underline">Contact Support</a>
+                <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-gray-600 dark:text-gray-300">
+                    <a href="#about" class="hover:underline">About Us</a>
+                    <span>•</span>
+                    <a href="#privacy" class="hover:underline">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#terms" class="hover:underline">Terms of Service</a>
+                    <span>•</span>
+                    <a href="#contact" class="hover:underline">Contact Support</a>
                 </div>
             </div>
         </div>
@@ -400,21 +349,6 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.getElementById('tool-' + tabId).classList.remove('hidden');
-            
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('text-crypto-600', 'dark:text-crypto-400', 'bg-crypto-50', 'dark:bg-gray-700');
-                btn.classList.add('text-gray-600', 'dark:text-gray-300');
-            });
-            const activeBtn = document.getElementById('nav-' + tabId);
-            if(activeBtn) {
-                activeBtn.classList.add('text-crypto-600', 'dark:text-crypto-400', 'bg-crypto-50', 'dark:bg-gray-700');
-                activeBtn.classList.remove('text-gray-600', 'dark:text-gray-300');
-            }
-        }
-
         function toggleDarkMode() {
             const html = document.documentElement;
             html.classList.toggle('dark');
@@ -433,47 +367,50 @@
             menu.classList.toggle('hidden');
         }
 
-        // Crypto ROI Calculation
+        // ROI Calculator
         function calculateRoi() {
             const invest = parseFloat(document.getElementById('roi-invest').value) || 0;
             const buy = parseFloat(document.getElementById('roi-buy').value) || 1;
             const sell = parseFloat(document.getElementById('roi-sell').value) || 0;
-            const feePercent = parseFloat(document.getElementById('roi-fee').value) || 0;
+            const feePct = (parseFloat(document.getElementById('roi-fee').value) || 0) / 100;
 
-            const coins = invest / buy;
-            const grossReturn = coins * sell;
-            const totalFees = (invest * (feePercent / 100)) + (grossReturn * (feePercent / 100));
-            const netProfit = grossReturn - invest - totalFees;
-            const roiPercent = invest > 0 ? (netProfit / invest) * 100 : 0;
+            const tokens = invest / buy;
+            const grossProceeds = tokens * sell;
+            const totalFees = (invest * feePct) + (grossProceeds * feePct);
+            const netProfit = grossProceeds - invest - totalFees;
+            const roiPct = invest > 0 ? (netProfit / invest) * 100 : 0;
 
-            document.getElementById('roi-profit-output').innerText = (netProfit >= 0 ? "$" : "-$") + Math.abs(netProfit).toFixed(2);
-            document.getElementById('roi-percent-output').innerText = (roiPercent >= 0 ? "+" : "") + roiPercent.toFixed(2) + "%";
+            document.getElementById('roi-profit-output').innerText = (netProfit >= 0 ? '$' : '-$') + Math.abs(netProfit).toFixed(2);
+            document.getElementById('roi-percent-output').innerText = (roiPct >= 0 ? '+' : '') + roiPct.toFixed(2) + '%';
         }
 
-        // Staking Compound Calculation
+        // Staking Calculator
         function calculateStaking() {
             const amount = parseFloat(document.getElementById('stake-amount').value) || 0;
-            const apy = parseFloat(document.getElementById('stake-apy').value) || 0;
+            const apy = (parseFloat(document.getElementById('stake-apy').value) || 0) / 100;
             const months = parseFloat(document.getElementById('stake-months').value) || 0;
 
             const years = months / 12;
-            const finalBalance = amount * Math.pow(1 + (apy / 100), years);
-            document.getElementById('stake-output').innerText = finalBalance.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " Tokens";
+            const finalBalance = amount * Math.pow((1 + apy / 12), 12 * years);
+
+            document.getElementById('stake-output').innerText = finalBalance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " Tokens";
         }
 
-        // Gas Fee Calculation
+        // Gas Fee Estimator
         function calculateGas() {
             const limit = parseFloat(document.getElementById('gas-limit').value) || 0;
             const priceGwei = parseFloat(document.getElementById('gas-price').value) || 0;
             const assetPrice = parseFloat(document.getElementById('asset-price').value) || 0;
 
-            const nativeCost = (limit * priceGwei) / 1e9;
-            const dollarCost = nativeCost * assetPrice;
-            document.getElementById('gas-output').innerText = "$" + dollarCost.toFixed(4);
+            // Cost ($) = (Limit * PriceInGwei * 10^-9) * AssetPrice
+            const ethCost = limit * priceGwei * 1e-9;
+            const usdCost = ethCost * assetPrice;
+
+            document.getElementById('gas-output').innerText = "$" + usdCost.toFixed(4);
         }
 
         // Initialize calculations on page load
-        document.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('DOMContentLoaded', () => {
             calculateRoi();
             calculateStaking();
             calculateGas();
